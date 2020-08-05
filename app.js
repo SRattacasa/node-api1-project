@@ -41,7 +41,7 @@ server.post("/api/users", (req, res) => {
 server.put("/api/users/:id", (req, res) => { 
     const id = req.params.id
     const data = req.body
-    const updateUser = db.updateUser(id)
+    const updateUser = db.updateUser(id, data)
 
     if (!updateUser) {
         res.status(404).json({message: "The user with the ID you provided doesn't exist, you moron."})
